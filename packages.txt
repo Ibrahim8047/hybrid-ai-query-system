@@ -1,0 +1,5 @@
+unixodbc
+unixodbc-dev
+odbcinst
+libodbc1
+libgssapi-krb5-2
