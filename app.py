@@ -1,7 +1,6 @@
 import streamlit as st
 import mysql.connector
 import pandas as pd
-import pyodbc
 import plotly.express as px
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -11,6 +10,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from sklearn.ensemble import IsolationForest
+try:
+    import pyodbc
+except ImportError:
+    pyodbc = None
 client = st.session_state.get("client", None)
 
 if "datasets" not in st.session_state:
@@ -721,3 +724,4 @@ elif st.session_state.page == "Machine_Learning_Studio":
 else:
     st.session_state.page = "🧠 AI Analytics Assistant"
     page_AI_Analytics_Assistant()
+
